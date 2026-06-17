@@ -1,49 +1,345 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>TaskaChat Account Deletion</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskaChat Account Deletion</title>
+
+  <style>
+    :root {
+      --emerald: #0F766E;
+      --teal: #14B8A6;
+      --gold: #F59E0B;
+      --dark: #0B1413;
+      --muted: #5F6F6B;
+      --bg: #F8FAF9;
+      --card: #FFFFFF;
+      --border: #E3ECE9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--emerald), #0B4F49);
+      color: white;
+      padding: 28px 20px 46px;
+    }
+
+    .nav {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 22px;
+    }
+
+    .logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, var(--teal), var(--emerald));
+      display: grid;
+      place-items: center;
+      position: relative;
+      box-shadow: 0 10px 24px rgba(0,0,0,.18);
+    }
+
+    .logo span {
+      color: white;
+      font-size: 26px;
+      font-weight: 800;
+    }
+
+    .logo::after {
+      content: "★";
+      position: absolute;
+      top: -8px;
+      right: -7px;
+      color: var(--gold);
+      font-size: 15px;
+    }
+
+    nav a {
+      color: rgba(255,255,255,.88);
+      text-decoration: none;
+      margin-left: 16px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .hero {
+      max-width: 1040px;
+      margin: 44px auto 0;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(245,158,11,.16);
+      color: #FFE7B0;
+      border: 1px solid rgba(245,158,11,.35);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+    }
+
+    .hero p {
+      max-width: 680px;
+      font-size: 18px;
+      color: rgba(255,255,255,.88);
+      margin-top: 18px;
+    }
+
+    main {
+      max-width: 1040px;
+      margin: -24px auto 50px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 26px;
+      margin-bottom: 18px;
+      box-shadow: 0 14px 34px rgba(15, 118, 110, .08);
+    }
+
+    .highlight {
+      border-left: 5px solid var(--gold);
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      color: var(--emerald);
+      font-size: 24px;
+      letter-spacing: -.3px;
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    li {
+      margin: 10px 0;
+      padding-left: 28px;
+      position: relative;
+      color: #30423E;
+    }
+
+    li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--teal);
+      font-weight: 800;
+    }
+
+    .email-box {
+      background: #ECFDF9;
+      border: 1px solid #C7F3EA;
+      border-radius: 16px;
+      padding: 16px;
+      margin: 14px 0;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--emerald);
+      word-break: break-word;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .small-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px;
+    }
+
+    .small-card strong {
+      display: block;
+      color: var(--dark);
+      margin-bottom: 6px;
+      font-size: 17px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: white;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--emerald);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 720px) {
+      nav {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 12px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 22px;
+        border-radius: 20px;
+      }
+    }
+  </style>
+
 </head>
+
 <body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo"><span>T</span></div>
+        <div>TaskaChat</div>
+      </div>
 
-<h1>TaskaChat Account Deletion</h1>
+```
+  <nav>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="account-deletion.html">Account Deletion</a>
+    <a href="child-safety.html">Child Safety</a>
+  </nav>
+</div>
 
-<p>If you would like to delete your TaskaChat account and associated data, please follow the instructions below.</p>
+<section class="hero">
+  <div class="badge">Account & Data Control</div>
+  <h1>Delete Your TaskaChat Account</h1>
+  <p>
+    Learn how to request permanent deletion of your TaskaChat account and associated data.
+  </p>
+</section>
+```
 
-<h2>How to Request Deletion</h2>
+  </header>
 
-<p>Send an email to:</p>
+  <main>
+    <section class="card highlight">
+      <h2>Request Account Deletion</h2>
+      <p>
+        To delete your TaskaChat account, send a request to our support email:
+      </p>
 
-<p><strong>stratoelevate@gmail.com</strong></p>
+```
+  <div class="email-box">stratoelevate@gmail.com</div>
 
-<p>Include:</p>
+  <p>Please include the following information:</p>
+  <ul>
+    <li>Your TaskaChat username</li>
+    <li>The email associated with your account, if applicable</li>
+    <li>A clear request stating that you want your account deleted</li>
+  </ul>
+</section>
 
-<ul>
-<li>Your TaskaChat username</li>
-<li>The email associated with your account (if applicable)</li>
-<li>A request stating that you want your account deleted</li>
-</ul>
+<section class="card">
+  <h2>What Will Be Deleted</h2>
+  <p>
+    When your account deletion request is processed, TaskaChat will delete or anonymize account-related information where applicable.
+  </p>
 
-<h2>What Will Be Deleted</h2>
+  <ul>
+    <li>Profile information</li>
+    <li>QR identity information</li>
+    <li>Connection information</li>
+    <li>TaskaHub participation records where applicable</li>
+    <li>User-generated content associated with your account where permitted</li>
+  </ul>
+</section>
 
-<ul>
-<li>Profile information</li>
-<li>Connection information</li>
-<li>QR identity information</li>
-<li>Groups and participation records where applicable</li>
-</ul>
+<section class="grid">
+  <div class="small-card">
+    <strong>Data Retention</strong>
+    <p>
+      Certain information may be retained where required for legal compliance, security investigations, fraud prevention, or enforcement of our Terms of Service.
+    </p>
+  </div>
 
-<h2>Data Retention</h2>
+  <div class="small-card">
+    <strong>Processing Time</strong>
+    <p>
+      Account deletion requests are normally reviewed and completed within 30 days.
+    </p>
+  </div>
+</section>
 
-<p>Some information may be retained when required by law, security, fraud prevention, or legitimate business obligations.</p>
+<section class="card">
+  <h2>Need Help?</h2>
+  <p>
+    If you have questions about your account, privacy, or data deletion, contact TaskaChat support.
+  </p>
+  <div class="email-box">stratoelevate@gmail.com</div>
+</section>
+```
 
-<h2>Processing Time</h2>
+  </main>
 
-<p>Deletion requests are typically processed within 30 days.</p>
-
-<h2>Contact</h2>
-
-<p>Email: stratoelevate@gmail.com</p>
-
+  <footer>
+    © 2026 TaskaChat. All rights reserved. ·
+    <a href="privacy-policy.html">Privacy Policy</a> ·
+    <a href="terms.html">Terms</a>
+  </footer>
 </body>
 </html>
