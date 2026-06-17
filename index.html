@@ -1,18 +1,261 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>TaskaChat Legal</title>
-</head>
-<body>
-  <h1>TaskaChat Legal Information</h1>
-  <p>Official legal pages for TaskaChat.</p>
 
-  <ul>
-    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-    <li><a href="terms.html">Terms of Service</a></li>
-    <li><a href="account-deletion.html">Account Deletion</a></li>
-    <li><a href="child-safety.html">Child Safety Standards</a></li>
-  </ul>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskaChat Legal Information</title>
+  <style>
+    :root {
+      --emerald: #0F766E;
+      --teal: #14B8A6;
+      --gold: #F59E0B;
+      --dark: #0B1413;
+      --muted: #5F6F6B;
+      --bg: #F8FAF9;
+      --card: #FFFFFF;
+      --border: #E3ECE9;
+    }
+
+```
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+  line-height: 1.7;
+}
+
+header {
+  background: linear-gradient(135deg, var(--emerald), #0B4F49);
+  color: white;
+  padding: 32px 20px 64px;
+}
+
+.nav, .hero, main {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--teal), var(--emerald));
+  display: grid;
+  place-items: center;
+  position: relative;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+
+.logo span {
+  color: white;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.logo::after {
+  content: "★";
+  position: absolute;
+  top: -8px;
+  right: -7px;
+  color: var(--gold);
+  font-size: 15px;
+}
+
+.hero {
+  margin-top: 52px;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(245,158,11,.16);
+  color: #FFE7B0;
+  border: 1px solid rgba(245,158,11,.35);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(36px, 6vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+}
+
+.hero p {
+  max-width: 700px;
+  font-size: 18px;
+  color: rgba(255,255,255,.88);
+  margin-top: 18px;
+}
+
+main {
+  margin-top: -34px;
+  padding: 0 20px 56px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 14px 34px rgba(15,118,110,.08);
+  text-decoration: none;
+  color: var(--dark);
+  display: block;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 44px rgba(15,118,110,.13);
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: #ECFDF9;
+  color: var(--emerald);
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+.card h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  color: var(--emerald);
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.note {
+  margin-top: 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--gold);
+  border-radius: 20px;
+  padding: 22px;
+  color: var(--muted);
+  box-shadow: 0 10px 28px rgba(15,118,110,.06);
+}
+
+footer {
+  text-align: center;
+  padding: 28px 20px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  background: white;
+  font-size: 14px;
+}
+
+footer a {
+  color: var(--emerald);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+  header { padding-bottom: 54px; }
+  .card { border-radius: 20px; }
+}
+```
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo"><span>T</span></div>
+        <div>TaskaChat</div>
+      </div>
+    </div>
+
+```
+<section class="hero">
+  <div class="badge">Official Legal Center</div>
+  <h1>TaskaChat Legal Information</h1>
+  <p>
+    Official policies, safety standards, and account management information for TaskaChat.
+  </p>
+</section>
+```
+
+  </header>
+
+  <main>
+    <section class="grid">
+      <a class="card" href="privacy-policy.html">
+        <div class="icon">🔐</div>
+        <h2>Privacy Policy</h2>
+        <p>Learn how TaskaChat collects, uses, stores, and protects your information.</p>
+      </a>
+
+```
+  <a class="card" href="terms.html">
+    <div class="icon">📄</div>
+    <h2>Terms of Service</h2>
+    <p>Review the rules, responsibilities, and conditions for using TaskaChat.</p>
+  </a>
+
+  <a class="card" href="account-deletion.html">
+    <div class="icon">🗑️</div>
+    <h2>Account Deletion</h2>
+    <p>Find instructions on how to permanently delete your account and related data.</p>
+  </a>
+
+  <a class="card" href="child-safety.html">
+    <div class="icon">🛡️</div>
+    <h2>Child Safety Standards</h2>
+    <p>Review our standards for user safety, protection, and responsible communication.</p>
+  </a>
+</section>
+
+<section class="note">
+  For support, privacy questions, account deletion, or safety-related reports, contact:
+  <strong>stratoelevate@gmail.com</strong>
+</section>
+```
+
+  </main>
+
+  <footer>
+    © 2026 TaskaChat. All rights reserved. ·
+    <a href="privacy-policy.html">Privacy Policy</a> ·
+    <a href="terms.html">Terms</a> ·
+    <a href="child-safety.html">Child Safety</a>
+  </footer>
 </body>
 </html>
